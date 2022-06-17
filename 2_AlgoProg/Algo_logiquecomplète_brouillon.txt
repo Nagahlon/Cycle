@@ -1,0 +1,32 @@
+//BUT	: Permettre a un ou deux joueur(s) de jouer au Reversi
+//ENTREE: Les coordonnées de cases
+//SORTIE: La victoire d'un joueur
+
+CONST TAILLE <- 8
+
+VAR booltour: BOOLEEN
+VAR s_joueur1, s_joueur2, s_ia: CHAINE
+t_plateau[TAILLE,TAILLE] : TABLEAU DE CARACTERES
+VAR n_i, n_j, n_k, n_l, n_pionblanc, n_pionnoir, n_cases, n_cpttour, n_couleur1, n_couleur2 : ENTIER
+
+DEBUT
+	PROCEDURE menu (n_menu : ENTIER)
+	PROCEDURE slctjoueur (n_menu, s_joueur1, s_joueur2, n_color1, n_color2, s_ia)
+	PROCEDURE initplateau (t_plateau, n_i, n_j n_couleur1, n_couleur2)
+		PROCEDURE gestiontour (n_menu, booltour)
+			PROCEDURE tourjoueur (booltour, n_cpttour)
+				PROCEDURE verif (t_plateau, n_cpttour, n_i, n_j)
+					PROCEDURE passejoueur (booltour)
+				PROCEDURE entreecoord (t_plateau)
+				PROCEDURE verif (t_plateau, n_cpttour, n_i, n_j)
+					PROCEDURE capturepion (t_plateau, n_pionblanc, n_pionnoir, n_cpttour, n_i, n_j)
+			PROCEDURE touria (booltour, n_cpttour)
+				PROCEDURE verif (t_plateau, n_cpttour, n_i, n_j)
+					PROCEDURE passejoueur (booltour)
+				PROCEDURE max (t_plateau, n_pionblanc, n_pionnoir, n_i, n_j, n_k, n_l)
+				PROCEDURE verif (t_plateau, n_cpttour, n_i, n_j)
+					PROCEDURE calculpion (n_pionblanc, n_pionnoir, t_plateau)
+						PROCEDURE capturepion (t_plateau, n_pionblanc, n_pionnoir, n_cpttour, n_i, n_j)
+		PROCEDURE calculpion (n_pionblanc, n_pionnoir, t_plateau)
+		PROCEDURE findepartie (s_joueur1, s_joueur2, s_ia, n_pionblanc, n_pionnoir)
+FIN
