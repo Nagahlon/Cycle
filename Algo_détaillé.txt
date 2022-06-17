@@ -1,0 +1,69 @@
+PROCEDURE menu (n_menu : ENTIER)
+	DEBUT
+		system("cls")
+
+		REPETER
+			ECRIRE "Selectionnez votre mode de jeu en entrant le numéro correspondant :"
+			ECRIRE "1- Joueur contre joueur"
+			ECRIRE "2- Joueur contre IA"
+			ECRIRE "3- Quitter"
+			LIRE
+		JUSQU'A (n_menu > 0 ET n_menu < 4)
+
+		SI (n_menu <> 3)
+		ALORS
+			slctjoueur (s_joueur1, s_joueur2, s_ia)
+		FINSI
+	FIN PROCEDURE
+
+
+
+PROCEDURE slctjoueur (n_menu, s_joueur1, s_joueur2, s_ia)
+	DEBUT
+		system("cls")
+
+		REPETER
+			ECRIRE "Joueur 1 veuillez écrire votre nom (pas plus de 10 caractères):"
+			LIRE s_joueur1
+		JUSQU'A (longueur(s_joueur1) < 11)
+
+		REPETER
+			ECRIRE "Joueur 1 veuillez sélectionner votre couleur parmi celle proposée:"
+			ECRIRE "NOIR : 1"
+			ECRIRE "BLANC : 2"
+			ECRIRE "ROUGE : 3"
+			ECRIRE "VERT : 4"
+			ECRIRE "BLEU : 5"
+			ECRIRE "JAUNE : 6"
+
+			LIRE n_couleur1
+		JUSQU'A (n_couleur1 < 7 ET n_couleur1 >0)
+
+		SI (n_menu == 1)
+		ALORS
+			REPETER
+				ECRIRE "Joueur 2 veuillez écrire votre nom (pas plus de 10 caractères):"
+				LIRE s_joueur2
+			JUSQU'A (longueur(s_joueur2) < 11)
+
+			REPETER
+				ECRIRE "Joueur 2 veuillez sélectionner votre couleur parmi celle proposée:"
+				ECRIRE "NOIR : 1"
+				ECRIRE "BLANC : 2"
+				ECRIRE "ROUGE : 3"
+				ECRIRE "VERT : 4"
+				ECRIRE "BLEU : 5"
+				ECRIRE "JAUNE : 6"
+
+				LIRE n_couleur2
+			JUSQU'A (n_couleur2 < 7 ET n_couleur2 >0 ET n_couleur2 <> n_couleur1)
+		FINSI
+
+		SI (n_menu == 2)
+		ALORS
+			s_ia <- "IA"
+		FINSI
+
+		initplateau (t_plateau, n_i, n_j, n_couleur1, n_couleur2)
+	FIN PROCEDURE
+				
